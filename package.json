@@ -1,0 +1,22 @@
+{
+  "name": "sqlite-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wz2cool/node-sqlite-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wz2cool/node-sqlite-demo/issues"
+  },
+  "homepage": "https://github.com/wz2cool/node-sqlite-demo#readme",
+  "dependencies": {
+    "sqlite3": "^5.0.2"
+  }
+}
