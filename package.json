@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/wz2cool/node-sqlite-demo#readme",
   "dependencies": {
+    "better-sqlite3": "^7.5.0",
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
