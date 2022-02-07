@@ -4,7 +4,7 @@ import path from "path";
 export class BetterSqlite3Test {
 
     public static run() {
-        const db = new Database(":memory:", { verbose: console.log });
+        const db = new Database("better.db", { verbose: console.log });
         const extPath = path.resolve("./lib/");
         console.log(extPath);
 
