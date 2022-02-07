@@ -1,3 +1,4 @@
 import { NodeSqlite3Test } from "./NodeSqlite3Test";
+import { BetterSqlite3Test } from "./BetterSqlite3Test";
 
-NodeSqlite3Test.run();
+BetterSqlite3Test.run();
