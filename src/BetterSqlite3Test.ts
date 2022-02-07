@@ -5,7 +5,6 @@ import fs from "fs";
 export class BetterSqlite3Test {
 
     public static run() {
-        fs.unlinkSync("better.db");
         try {
             const db = new Database("better.db", { verbose: console.log });
             db.pragma('journal_mode = WAL');
