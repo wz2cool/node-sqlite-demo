@@ -25,7 +25,7 @@ export class BetterSqlite3Test {
         // insert some data
         db.exec("insert into t1(x) values ('周杰伦 Jay Chou:我已分不清，你是友情还是错过的爱情'), ('周杰伦 Jay Chou:最美的不是下雨天，是曾与你躲过雨的屋檐'), ('I love China! 我爱中国！我是中华人民共和国公民！'), ('@English &special _characters.\"''bacon-&and''-eggs%')");
 
-        const row1 = db.prepare("select rowid as id, simple_highlight(t1, 0, '[', ']') as info from t1 where x match simple_query(?)").get("zjl");
+        const row1 = db.prepare("select rowid as id, simple_highlight(t1, 0, '[', ']') as info from t1 where x match jieba_query(?)").get("zjl");
         console.log(row1.id + ": " + row1.info);
         const row2 = db.prepare("select rowid as id, simple_highlight(t1, 0, '[', ']') as info from t1 where x match simple_query(?)").get("中国");
         console.log(row2.id + ": " + row2.info);
