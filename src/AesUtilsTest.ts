@@ -20,5 +20,11 @@ export class AesUtilsTest {
         const resultArray = AesUtils.decryptU8Array(key, iv, encrypt);
         const resultStr2 = new util.TextDecoder().decode(resultArray);
         console.log(resultStr2);
+
+        const base64 = Buffer.from("test test", "utf-8");
+        const encrypt1 = AesUtils.encryptU8Array(key, iv, base64);
+        const resultArray3 = AesUtils.decryptU8Array(key, iv, encrypt1);
+        const resultStr3 = new util.TextDecoder().decode(resultArray3);
+        console.log(resultStr3);
     }
 }

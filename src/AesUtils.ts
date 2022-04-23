@@ -7,17 +7,23 @@ export class AesUtils {
         return crypto.pbkdf2Sync(passphrase, salt, 1000, 128 / 8, "sha1");
     }
 
-    public static decryptBase64(key: Buffer, iv: Uint8Array, cryptedBase64: string): string {
+    public static decryptBase64(key: Uint8Array, iv: Uint8Array, cryptedBase64: string): string {
         const decipher = crypto.createDecipheriv('aes-128-cbc', key, iv);
         let decoded = decipher.update(cryptedBase64, "base64", 'utf8');
         decoded += decipher.final('utf8');
         return decoded;
     }
 
-    public static decryptU8Array(key: Buffer, iv: Uint8Array, cryptedU8Array: Uint8Array): Buffer {
+    public static decryptU8Array(key: Uint8Array, iv: Uint8Array, cryptedU8Array: Uint8Array): Uint8Array {
         const decipher = crypto.createDecipheriv('aes-128-cbc', key, iv);
         decipher.update(cryptedU8Array);
         return decipher.final();
+    }
+
+    public static encryptU8Array(key: Uint8Array, iv: Uint8Array, orgininalU8Array: Uint8Array): Uint8Array {
+        const cipher = crypto.createCipheriv('aes-128-cbc', key, iv);
+        cipher.update(orgininalU8Array)
+        return cipher.final();
     }
 
     public static toU8Array(base64: String): Uint8Array {
